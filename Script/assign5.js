@@ -8,15 +8,23 @@ const nextPhase = document.getElementById('nextphase');
 const contactNumber = document.querySelector('#contactNumber');
 nextPhase.addEventListener('click', NextButtonAction);
 contactNumber.addEventListener('input', handleNextButtonState);
+
 function handleNextButtonState() {
-    if (contactNumber.value.trim() !== '' && !isNaN(contactNumber.value) && count !== 0) {
-        nextPhase.removeAttribute('disabled');
+    if (isValidContactNumber() && count > 0) {
+        nextPhase.disabled = false;
         nextPhase.style.backgroundColor = '#1dd100';
     }
 }
 
+function isValidContactNumber() {
+    const contactNumberValue = contactNumber.value.trim();
+    return contactNumberValue !== '' && !isNaN(contactNumberValue);
+}
+
+
+///////////////////////////////////////////////////////////////
 var cost = 0;
-var invalidCouponChecker = false;
+var invalidCouponChecker = false;//////////////////////////
 const grP = document.getElementById('grandPrize');
 const disPr = document.getElementById('discountPrice');
 const applyCu = document.getElementById('applyCoupon');
@@ -27,36 +35,25 @@ applyCu.addEventListener('click', grandTotalCounter);
 function grandTotalCounter() {
     if (count == 4) {
         applyCu.removeAttribute('disabled');
-        applyCu.style.backgroundColor = '#1dd100';
-        if (inCoupon.value == 'NEW15') {
-            grP.innerText = cost - ((15 / 100) * cost);
+
+        if (inCoupon.value == 'NEW15' || inCoupon.value == 'Couple 20') {
+            const discount = (inCoupon.value == 'NEW15') ? 0.15 : 0.20;
+            const discountAmount = cost * discount;
+            grP.innerText = cost - discountAmount;
             const dis = document.createElement('p');
             dis.textContent = 'Discount';
             const amount = document.createElement('p');
-            amount.textContent = 'BDT ' + ((15 / 100) * cost);
+            amount.textContent = 'BDT ' + discountAmount;
             disPr.appendChild(dis);
             disPr.appendChild(amount);
-            disPr.classList.remove('hidden');
-            couponInput.classList.add('hidden');
-            if (invalidCouponChecker) {
-                invalidCoupon.classList.add('hidden');
-            }
-        } else if (inCoupon.value == 'Couple 20') {
-            grP.innerText = cost - ((20 / 100) * cost);
-            const dis = document.createElement('p');
-            dis.textContent = 'Discount';
-            const amount = document.createElement('p');
-            amount.textContent = 'BDT ' + ((20 / 100) * cost);
-            disPr.appendChild(dis);
-            disPr.appendChild(amount);
-            disPr.classList.remove('hidden');
-            disPr.classList.add('flex');
-            couponInput.classList.add('hidden');
+            disPr.classList.remove('hidden');        
+            couponInput.classList.add('hidden');   
             if (invalidCouponChecker) {
                 invalidCoupon.classList.add('hidden');
             }
         } else if (inCoupon.value !== '') {
-            alert('Invalid coupon code!')
+            
+            alert('Invalid coupon code!');
         }
     }
 }
@@ -64,7 +61,7 @@ function grandTotalCounter() {
 
 
 const totalseat = 40;
-const price = 550;
+const price = 550;////////////////////////////////////////
 var checker = false;
 var tempArr = [];
 const className = 'Economy';
@@ -119,3 +116,11 @@ for (let i = 1; i < seatButtons.length; i++) {
         }
     });
 }
+
+
+
+
+
+
+
+////////////////////////////
