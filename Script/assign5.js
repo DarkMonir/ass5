@@ -3,15 +3,15 @@
 function NextButtonAction() {
     window.open('success.html');
 }
-var count = 0;
-const nextButton = document.getElementById('next');
+var count = 0; ////////
+const nextPhase = document.getElementById('nextphase');
 const contactNumber = document.querySelector('#contactNumber');
-nextButton.addEventListener('click', NextButtonAction);
+nextPhase.addEventListener('click', NextButtonAction);
 contactNumber.addEventListener('input', handleNextButtonState);
 function handleNextButtonState() {
     if (contactNumber.value.trim() !== '' && !isNaN(contactNumber.value) && count !== 0) {
-        nextButton.removeAttribute('disabled');
-        nextButton.style.backgroundColor = '#1dd100';
+        nextPhase.removeAttribute('disabled');
+        nextPhase.style.backgroundColor = '#1dd100';
     }
 }
 

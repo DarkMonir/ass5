@@ -6,7 +6,7 @@
     <title>M-Travels</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css">
-    <link rel="icon" href="Images/ticket.png" type="image/x-icon">
+    
     
 
 </head>
@@ -18,13 +18,13 @@
           <div class="navbar-start">
             <div class="dropdown">
               <ul tabindex="0" class="menu menu-sm dropdown-content text-slate-400 mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-48">
-                <li><a>Home</a></li>
-                <li><a>About</a></li>
-                <li><a>Destination</a></li>
-                <li><a>Search</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Destination</a></li>
+                <li><a href="#">Search</a></li>
               </ul>
             </div>
-            <a class="text-4xl font-raleway font-extrabold text-[textprime]">M-Travels</a>
+            <a href="index.html" class="text-4xl font-raleway font-extrabold text-[textprime]">M-Travels</a>
           </div>
           <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1">
@@ -37,7 +37,7 @@
             </ul>
           </div>
           <div class="navbar-end">
-            <a class="btn text-[#1dd100] text-xl font-bold px-6 bg-[#1DD1001A] rounded-lg"><p>Bus</p>
+            <a href="#tickets" class="btn text-[#1dd100] text-xl font-bold px-6 bg-[#1DD1001A] rounded-lg"><p>Bus</p>
               <img src="images/bus-icon.png" alt="">
             </a>
           </div>
@@ -91,14 +91,14 @@
     </section>
     <!--banner end-->
 
-    <!--best offer-->
+    <!--offer start-->
     <section class="main-sections container mx-auto my-6">
       <div class="flex flex-col gap-12 items-center">
         <p class="font-inter font-bold text-4xl text-[textprime] text-center">
           Best offers for you
         </p>
         <div class="flex flex-col lg:flex-row gap-6 justify-center w-full">
-          <!-- card-1 -->
+         
           <div class="w-full">
             <div class="bg-[#FFBF0F] rounded-2xl flex">
               <div class="py-12 pl-12 pr-6 w-full">
@@ -118,7 +118,7 @@
             </div>
           </div>
 
-          <!-- card-2 -->
+          
           <div class="w-full">
             <div class="bg-[#F78C9C] rounded-2xl flex">
               <div class="py-12 pl-12 ">
@@ -142,7 +142,7 @@
         <a class="bg-[#faf7f5] btn rounded-lg border-[#1dd100] w-[188px] px-6 text-xl font-bold text-[#1dd100] h-max" href="">See All Offers</a>
       </div>
     </section>
-    <!--best offer end-->
+    <!--offer end-->
 
     <!--seat selection start-->
     <section id="tickets" class="main-sections container mx-auto my-24 border-t-[4px] rounded-[26px] border-[#1dd100]">
@@ -309,6 +309,32 @@
             <button id="E4" class="seat font-inter font-medium  bg-[#F7F8F8] h-14 rounded-md text-lg">
               E4
             </button>
+            <p>F</p>
+            <button id="E1" class="seat font-inter font-medium  bg-[#F7F8F8] h-14 rounded-md text-lg">
+              F1
+            </button>
+            <button id="E2" class="seat font-inter font-medium  bg-[#F7F8F8] h-14 rounded-md text-lg">
+              F2
+            </button>
+            <button id="E3" class="seat font-inter font-medium  bg-[#F7F8F8] h-14 rounded-md text-lg">
+              F3
+            </button>
+            <button id="E4" class="seat font-inter font-medium  bg-[#F7F8F8] h-14 rounded-md text-lg">
+              F4
+            </button>
+            <p>G</p>
+            <button id="E1" class="seat font-inter font-medium  bg-[#F7F8F8] h-14 rounded-md text-lg">
+              G1
+            </button>
+            <button id="E2" class="seat font-inter font-medium  bg-[#F7F8F8] h-14 rounded-md text-lg">
+              G2
+            </button>
+            <button id="E3" class="seat font-inter font-medium  bg-[#F7F8F8] h-14 rounded-md text-lg">
+              G3
+            </button>
+            <button id="E4" class="seat font-inter font-medium  bg-[#F7F8F8] h-14 rounded-md text-lg">
+              G4
+            </button>
           </div>
           
         </div>
@@ -359,17 +385,17 @@
           <div class="flex flex-col gap-2 mt-10">
             <div class="flex flex-col gap-6">
               <label class="font-inter font-semibold">Passenger Name*</label>
-              <input class="input join-item bg-white border-[#03071266] rounded-lg w-full" placeholder="Enter your name">
+              <input class="input join-item bg-white border-[#03071266] rounded-lg w-full" placeholder="Enter your name:">
             </div>
             <div class="flex flex-col gap-6">
               <label class="font-inter font-semibold">Phone Number*</label>
-              <input id="contactNumber" type="tel" class="input join-item bg-white border-[#03071266] rounded-lg w-full" placeholder="Enter your phone number">
+              <input id="contactNumber" type="tel" class="input join-item bg-white border-[#03071266] rounded-lg w-full" placeholder="Enter your phone number:">
             </div>
             <div class="flex flex-col gap-6">
               <label class="font-inter font-semibold">Email ID</label>
               <input class="input join-item bg-white border-[#03071266] rounded-lg w-full" placeholder="Enter your email id">
             </div>
-            <button href="" id="next" class="bg-gray-400  rounded-lg w-full border-none text-white font-bold text-xl px-[30px] py-3 " disabled="">
+            <button href="" id="nextphase" class="bg-gray-400  rounded-lg w-full border-none text-white font-bold text-xl px-[30px] py-3 " disabled="">
               Next
             </button>
             <div class="flex justify-between text-[#03071299] px-4">
@@ -384,7 +410,7 @@
 
 
 
-    <script src="assign5.js"></script>
+    <script src="Script/assign5.js"></script>
     
   
 
